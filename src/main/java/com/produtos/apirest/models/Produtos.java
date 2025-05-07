@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Produtos implements Serializable{
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1091283402938423L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -29,16 +29,15 @@ public class Produtos implements Serializable{
 	private Double preco;
 
 	@NotNull
-	@OneToOne
 	@JoinColumn(name = "CATEGORIA_ID")
-	private Categorias categoriaId;
+	private Integer categoriaId;
 
 	@CreationTimestamp
-	@Column(name = "CREATED_AT")
+	@Column(name = "DATA_INCLUSAO")
 	private Timestamp dataRegistro;
 
 	@UpdateTimestamp
-	@Column(name = "UPDATED_AT")
+	@Column(name = "DATA_ALTERACAO")
 	private Timestamp dataAlteracao;
 
 	public long getId() {
@@ -70,12 +69,27 @@ public class Produtos implements Serializable{
 		this.preco = preco;
 	}
 
-	public Categorias getCategoriaId() {
+	public Integer getCategoriaId() {
 		return categoriaId;
 	}
 
-	public void setCategoriaId(Categorias categoriaId) {
+	public void setCategoriaId(Integer categoriaId) {
 		this.categoriaId = categoriaId;
 	}
 
+	public Timestamp getDataRegistro() {
+		return dataRegistro;
+	}
+
+	public void setDataRegistro(Timestamp dataRegistro) {
+		this.dataRegistro = dataRegistro;
+	}
+
+	public Timestamp getDataAlteracao() {
+		return dataAlteracao;
+	}
+
+	public void setDataAlteracao(Timestamp dataAlteracao) {
+		this.dataAlteracao = dataAlteracao;
+	}
 }

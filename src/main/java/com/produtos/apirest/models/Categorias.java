@@ -20,11 +20,11 @@ public class Categorias implements Serializable {
     private String nome;
 
     @CreationTimestamp
-    @Column(name = "CREATED_AT")
+    @Column(name = "DATA_INCLUSAO")
     private Timestamp dataRegistro;
 
     @UpdateTimestamp
-    @Column(name = "UPDATED_AT")
+    @Column(name = "DATA_ALTERACAO")
     private Timestamp dataAlteracao;
 
     public long getId() {
@@ -43,4 +43,19 @@ public class Categorias implements Serializable {
         this.nome = nome;
     }
 
+    public Timestamp getDataRegistro() {
+        return dataRegistro;
+    }
+
+    public void setDataRegistro(Timestamp dataRegistro) {
+        this.dataRegistro = dataRegistro;
+    }
+
+    public Timestamp getDataAlteracao() {
+        return dataAlteracao;
+    }
+
+    public void setDataAlteracao(Timestamp dataAlteracao) {
+        this.dataAlteracao = dataAlteracao;
+    }
 }
